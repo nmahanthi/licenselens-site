@@ -1,0 +1,52 @@
+{
+  "name": "LicenseLens — Microsoft 365 & Azure Savings",
+  "short_name": "LicenseLens",
+  "description": "Find wasted Microsoft 365 seats and idle Azure resources in minutes. Read-only, in-browser analysis with a board-ready savings roadmap.",
+  "id": "/",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#070c16",
+  "theme_color": "#0b1220",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "finance", "utilities"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Savings roadmap",
+      "short_name": "Roadmap",
+      "description": "Open the prioritised savings plan",
+      "url": "./?view=roadmap",
+      "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Connect a tenant",
+      "short_name": "Connect",
+      "description": "Scan your own Microsoft 365 and Azure estate",
+      "url": "./?view=connect",
+      "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
+    }
+  ]
+}
