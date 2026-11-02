@@ -1,6 +1,6 @@
 /* LicenseLens offline shell. Network-first so a hosted update is picked up,
    with a cached fallback so the app opens on a plane or behind a proxy. */
-const CACHE = "licenselens-v1";
+const CACHE = "licenselens-v2";
 const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./favicon.svg"];
 
 self.addEventListener("install", (event) => {
@@ -28,8 +28,10 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
+  // Pages are fetched past the HTTP cache so a new deployment shows on the next load.
+  const fresh = request.mode === "navigate" ? fetch(request.url, { cache: "no-store", credentials: "same-origin" }) : fetch(request);
   event.respondWith(
-    fetch(request)
+    fresh
       .then((response) => {
         if (response && response.status === 200 && response.type === "basic") {
           const copy = response.clone();
