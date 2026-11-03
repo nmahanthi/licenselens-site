@@ -1,6 +1,6 @@
 /* LicenseLens offline shell. Network-first so a hosted update is picked up,
    with a cached fallback so the app opens on a plane or behind a proxy. */
-const CACHE = "licenselens-v2";
+const CACHE = "licenselens-v3";
 const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./favicon.svg"];
 
 self.addEventListener("install", (event) => {
