@@ -116,7 +116,10 @@
         </tbody>
       </table>
       <p>
-        The app only performs read operations. It cannot change, delete, or assign anything in your tenant.
+        The scan only performs read operations. The app changes your tenant in one case: when an administrator
+        adds or removes a user's licences on the Licenses tab and confirms the change. That request goes directly
+        from the browser to Microsoft Graph with the delegated permission LicenseAssignment.ReadWrite.All, which is
+        requested only at that moment. The app never deletes users and never changes Azure resources.
         All processing happens in the browser tab. Data is held in memory for the session and is not
         transmitted to the publisher or any third party.
       </p>
