@@ -131,7 +131,7 @@
         </thead>
         <tbody>
           <tr><td><code>sessionStorage</code></td><td>MSAL sign-in state and access tokens</td><td>Until the tab or browser session closes</td></tr>
-          <tr><td><code>localStorage</code></td><td>Application (client) ID, tenant ID, price overrides, thresholds</td><td>Until you clear site data or reset the app</td></tr>
+          <tr><td><code>localStorage</code></td><td>Application (client) ID, tenant ID, price overrides, thresholds, optional Copilot connection</td><td>Until you clear site data or reset the app</td></tr>
           <tr><td>Service worker cache</td><td>The app shell, for offline use</td><td>Until the cache is cleared or the app is updated</td></tr>
         </tbody>
       </table>
@@ -151,6 +151,18 @@
       <p>
         Your organisation's Microsoft Entra and Azure administrators control whether these permissions
         are granted. Microsoft's own privacy statement applies to data processed by those services.
+      </p>
+
+      <h2>Optional Microsoft Copilot Studio chat</h2>
+      <p>
+        Copilot stays disconnected until you configure an approved Microsoft Web Chat URL in Settings.
+        Starting a conversation loads Microsoft's embedded chat. Microsoft and services configured by the
+        agent owner process the messages you send under that organisation's policies. The agent has
+        no automatic access to the scan held in this browser. You can review a summary and copy it into
+        chat. The summary includes aggregate spend, seat counts, capture time and estimated savings.
+        The configured Web Chat URL and approval flag are saved with browser-local settings.
+        The standard embed requires an agent approved for unauthenticated web access. Agents requiring
+        sign-in need a separate SDK integration.
       </p>
 
       <h2>Exports</h2>
