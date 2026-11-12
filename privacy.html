@@ -93,8 +93,8 @@
 
       <h2>Summary</h2>
       <ul>
-        <li>LicenseLens has <strong>no backend</strong> and <strong>no publisher-operated data collection</strong>.</li>
-        <li>Tenant data is read directly from Microsoft APIs into your browser and is <strong>not sent to us</strong>.</li>
+        <li>Scan analysis runs in your browser. The optional assistant uses an organisation-operated chat API.</li>
+        <li>Tenant data is read directly from Microsoft APIs into your browser. The assistant receives aggregate scan figures only when you choose to include them.</li>
         <li>There is <strong>no telemetry, analytics, advertising, or third-party tracking</strong>.</li>
         <li>Sign-in tokens are kept in the browser session and are discarded when the session ends.</li>
         <li>Reports you export are created and saved on your device.</li>
@@ -120,7 +120,7 @@
         adds or removes a user's licences on the Licenses tab and confirms the change. That request goes directly
         from the browser to Microsoft Graph with the delegated permission LicenseAssignment.ReadWrite.All, which is
         requested only at that moment. The app never deletes users and never changes Azure resources.
-        All processing happens in the browser tab. Data is held in memory for the session and is not
+        Scan processing happens in the browser tab. Data is held in memory for the session and is not
         transmitted to the publisher or any third party.
       </p>
 
@@ -131,7 +131,7 @@
         </thead>
         <tbody>
           <tr><td><code>sessionStorage</code></td><td>MSAL sign-in state and access tokens</td><td>Until the tab or browser session closes</td></tr>
-          <tr><td><code>localStorage</code></td><td>Application (client) ID, tenant ID, price overrides, thresholds, optional Copilot connection</td><td>Until you clear site data or reset the app</td></tr>
+          <tr><td><code>localStorage</code></td><td>Application (client) ID, tenant ID, price overrides, thresholds</td><td>Until you clear site data or reset the app</td></tr>
           <tr><td>Service worker cache</td><td>The app shell, for offline use</td><td>Until the cache is cleared or the app is updated</td></tr>
         </tbody>
       </table>
@@ -153,16 +153,14 @@
         are granted. Microsoft's own privacy statement applies to data processed by those services.
       </p>
 
-      <h2>Optional Microsoft Copilot Studio chat</h2>
+      <h2>Optional Azure OpenAI assistant</h2>
       <p>
-        Copilot stays disconnected until you configure an approved Microsoft Web Chat URL in Settings.
-        Starting a conversation loads Microsoft's embedded chat. Microsoft and services configured by the
-        agent owner process the messages you send under that organisation's policies. The agent has
-        no automatic access to the scan held in this browser. You can review a summary and copy it into
-        chat. The summary includes aggregate spend, seat counts, capture time and estimated savings.
-        The configured Web Chat URL and approval flag are saved with browser-local settings.
-        The standard embed requires an agent approved for unauthenticated web access. Agents requiring
-        sign-in need a separate SDK integration.
+        When you send a chat message, your organisation's chat API forwards it and recent
+        messages to its Azure OpenAI model deployment in Microsoft Foundry. You can review and
+        include aggregate scan figures with a message. The app keeps chat history in memory
+        and clears it when you clear chat, close the page or change scans. The chat API
+        does not store the conversation or log message content. Your organisation's Azure
+        service settings and policies govern processing of messages.
       </p>
 
       <h2>Exports</h2>
@@ -189,8 +187,8 @@
       <h2>Security</h2>
       <p>
         The app uses OAuth 2.0 authorisation-code flow with PKCE. It does not use a client secret. Access
-        tokens are held in session storage and sent only to Microsoft endpoints. Because there is no
-        backend, there is no server-side database of tenant data to breach.
+        tokens for the scan are held in session storage and used with Microsoft APIs. The assistant
+        uses a separate access token held in browser memory and sent to its chat API.
       </p>
 
       <h2>Changes</h2>
