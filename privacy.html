@@ -79,7 +79,7 @@
       <p class="updated">Last updated: 2 November 2026</p>
 
       <p>
-        LicenseLens is a read-only analysis tool for Microsoft 365 and Azure. This policy explains what
+        LicenseLens is a licence analysis tool for Microsoft 365. This policy explains what
         happens to information when you use the app.
       </p>
       <p>
@@ -111,15 +111,14 @@
           <tr><td>Users, sign-in state, assigned licences</td><td>Microsoft Graph</td><td>Find idle, disabled, dormant, stacked, guest, and unlicensed accounts</td></tr>
           <tr><td>Subscribed SKUs and seat counts</td><td>Microsoft Graph</td><td>Compare paid seats with assigned seats</td></tr>
           <tr><td>Microsoft 365 usage reports</td><td>Microsoft Graph</td><td>Detect inactive accounts and unused services</td></tr>
-          <tr><td>Azure resources, disks, network interfaces, public IPs, snapshots, App Service plans</td><td>Azure Resource Manager</td><td>Find idle Azure resources</td></tr>
-          <tr><td>Azure cost by resource (last 30 days)</td><td>Azure Cost Management</td><td>Estimate the cost of idle resources</td></tr>
+          <tr><td>Sign-in attempts of the last 7 days: city, country, IP address, app, result</td><td>Microsoft Graph sign-in log</td><td>Show where each user last signed in or tried to sign in</td></tr>
         </tbody>
       </table>
       <p>
         The scan only performs read operations. The app changes your tenant in one case: when an administrator
         adds or removes a user's licences on the Licenses tab and confirms the change. That request goes directly
         from the browser to Microsoft Graph with the delegated permission LicenseAssignment.ReadWrite.All, which is
-        requested only at that moment. The app never deletes users and never changes Azure resources.
+        requested only at that moment. The app never deletes users.
         Scan processing happens in the browser tab. Data is held in memory for the session and is not
         transmitted to the publisher or any third party.
       </p>
@@ -145,11 +144,10 @@
       <ul>
         <li><code>login.microsoftonline.com</code> for sign-in</li>
         <li><code>graph.microsoft.com</code> for Microsoft 365 data</li>
-        <li><code>management.azure.com</code> for Azure Resource Graph and Cost Management</li>
         <li><code>api.partner.microsoft.com</code> for the Partner Center price sheet, only when a CSP partner selects <strong>Get prices from Partner Center</strong></li>
       </ul>
       <p>
-        Your organisation's Microsoft Entra and Azure administrators control whether these permissions
+        Your organisation's Microsoft Entra administrators control whether these permissions
         are granted. Microsoft's own privacy statement applies to data processed by those services.
       </p>
 
@@ -181,7 +179,7 @@
         <li><strong>Disconnect</strong> clears the active account and returns the app to demo mode.</li>
         <li><strong>Sign out</strong> ends the Microsoft session for the app.</li>
         <li>Clear site data in your browser to remove saved settings, client/tenant IDs, and cached app files.</li>
-        <li>Ask your Microsoft 365 administrator to revoke the app's consent or remove your Azure role assignments.</li>
+        <li>Ask your Microsoft 365 administrator to revoke the app's consent.</li>
       </ul>
 
       <h2>Security</h2>

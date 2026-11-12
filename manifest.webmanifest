@@ -1,7 +1,7 @@
 {
-  "name": "LicenseLens — Microsoft 365 & Azure Savings",
+  "name": "LicenseLens — Microsoft 365 Licence Savings",
   "short_name": "LicenseLens",
-  "description": "Find wasted Microsoft 365 seats and idle Azure resources in minutes. Read-only, in-browser analysis with a board-ready savings roadmap.",
+  "description": "Find wasted Microsoft 365 licences in minutes. Read-only, in-browser analysis with a board-ready savings roadmap.",
   "id": "/",
   "start_url": "./",
   "scope": "./",
@@ -44,7 +44,7 @@
     {
       "name": "Connect a tenant",
       "short_name": "Connect",
-      "description": "Scan your own Microsoft 365 and Azure estate",
+      "description": "Scan your own Microsoft 365 tenant",
       "url": "./?view=connect",
       "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
     }
