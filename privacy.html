@@ -120,8 +120,8 @@
         adds or removes a user's licences on the Licenses tab and confirms the change. That request goes directly
         from the browser to Microsoft Graph with the delegated permission LicenseAssignment.ReadWrite.All, which is
         requested only at that moment. The app never deletes users.
-        Scan processing happens in the browser tab. Data is held in memory for the session and is not
-        transmitted to the publisher or any third party.
+        Scan processing happens in the browser tab. The latest scan is kept in the tab's session storage
+        so you can reopen it after a page refresh.
       </p>
 
       <h2>Information stored on your device</h2>
@@ -131,6 +131,7 @@
         </thead>
         <tbody>
           <tr><td><code>sessionStorage</code></td><td>MSAL sign-in state and access tokens</td><td>Until the tab or browser session closes</td></tr>
+          <tr><td><code>sessionStorage</code></td><td>Latest tenant scan, including user and licence data</td><td>Until sign-out, switching to demo, changing connection settings, or closing the tab</td></tr>
           <tr><td><code>localStorage</code></td><td>Application (client) ID, tenant ID, price overrides, thresholds</td><td>Until you clear site data or reset the app</td></tr>
           <tr><td>Service worker cache</td><td>The app shell, for offline use</td><td>Until the cache is cleared or the app is updated</td></tr>
         </tbody>
