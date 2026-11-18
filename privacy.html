@@ -5,76 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
     <title>LicenseLens privacy policy</title>
+    <meta name="theme-color" content="#FFFFFF" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <style>
+      /* Kaara Brand & Experience System v2.0 tokens */
       :root {
-        color-scheme: dark;
-        --bg: #070c16;
-        --panel: #0d1524;
-        --line: #1e2b42;
-        --text: #e6edf7;
-        --muted: #9db0c8;
-        --accent: #4f9bff;
+        color-scheme: light;
+        --cta: #E51E25;
+        --red-700: #C4191D;
+        --white: #FFFFFF;
+        --bg: #F6F6F6;
+        --grid-line: #E9EAEB;
+        --border: #DADADA;
+        --body: #6B7280;
+        --ink-soft: #374151;
+        --ink: #171717;
       }
       * { box-sizing: border-box; }
       body {
         margin: 0;
-        background: radial-gradient(1200px 600px at 50% -10%, #10203a 0%, var(--bg) 60%);
-        color: var(--text);
-        font: 16px/1.65 "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: var(--white);
+        color: var(--ink);
+        font: 16px/1.65 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
       }
       main {
         max-width: 760px;
         margin: 0 auto;
-        padding: 56px 24px 80px;
+        padding: 40px 24px 80px;
       }
-      a { color: var(--accent); }
+      a { color: var(--red-700); }
+      a:hover { color: var(--cta); }
+      :focus-visible { outline: 2px solid var(--cta); outline-offset: 2px; }
       .brand {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        margin-bottom: 32px;
-        color: var(--text);
+        gap: 14px;
+        margin-bottom: 40px;
+        color: var(--ink);
         text-decoration: none;
-        font-weight: 700;
-        letter-spacing: 0.01em;
+        font-weight: 600;
+        font-size: 17px;
       }
-      .mark {
-        width: 26px;
-        height: 26px;
-        border-radius: 8px;
-        background: linear-gradient(135deg, #4f9bff, #22d3ee);
-        box-shadow: 0 0 0 4px rgba(79, 155, 255, 0.12);
-      }
-      h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
-      h2 { font-size: 1.15rem; margin: 36px 0 10px; }
-      p, li { color: var(--muted); }
-      strong { color: var(--text); }
-      .updated { margin: 0 0 28px; font-size: 0.9rem; }
+      .brand img { display: block; height: 36px; width: 72px; }
+      .brand .divider { width: 1px; height: 28px; background: var(--border); }
+      h1, h2 { font-family: "Google Sans Flex", "Inter", system-ui, sans-serif; letter-spacing: -0.02em; }
+      h1 { font-size: 2.2rem; font-weight: 400; line-height: 1.15; margin: 0 0 8px; }
+      h2 { font-size: 1.15rem; font-weight: 600; margin: 36px 0 10px; }
+      p, li { color: var(--ink-soft); }
+      strong { color: var(--ink); }
+      .updated { margin: 0 0 28px; font-size: 0.9rem; color: var(--body); }
       ul { padding-left: 22px; }
       table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 0.95rem; }
-      th, td { text-align: left; padding: 10px 12px; border: 1px solid var(--line); vertical-align: top; }
-      th { color: var(--text); background: rgba(255, 255, 255, 0.03); }
-      td { color: var(--muted); }
+      th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--grid-line); vertical-align: top; }
+      th { color: var(--ink-soft); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border-bottom-color: var(--border); }
+      td { color: var(--ink-soft); }
       code {
-        font: 0.9em ui-monospace, "Cascadia Code", Consolas, monospace;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid var(--line);
-        border-radius: 5px;
+        font: 0.88em "Google Sans Code", ui-monospace, "Cascadia Code", Consolas, monospace;
+        background: var(--bg);
+        border: 1px solid var(--grid-line);
         padding: 1px 5px;
       }
       .note {
-        border-left: 3px solid var(--accent);
-        background: rgba(79, 155, 255, 0.07);
+        border-left: 3px solid var(--cta);
+        background: var(--bg);
         padding: 12px 16px;
-        border-radius: 0 8px 8px 0;
         margin: 20px 0;
       }
-      footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 0.9rem; }
+      footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--body); }
     </style>
   </head>
   <body>
     <main>
-      <a class="brand" href="./"><span class="mark" aria-hidden="true"></span>LicenseLens</a>
+      <a class="brand" href="./"><img src="./brand/kaara-logo.svg" alt="Kaara" width="72" height="36" /><span class="divider" aria-hidden="true"></span>LicenseLens</a>
       <h1>Privacy policy</h1>
       <p class="updated">Last updated: 12 November 2026</p>
 
